@@ -31,7 +31,7 @@ mongod --dbpath /tmp/mongo-db --bind_ip 127.0.0.1 --port 27017
 
 ```bash
 cd /Users/areeb/Documents/form-db
-PORT=5050 node server.js
+node server.js
 ```
 
 4. Open frontend:
@@ -45,7 +45,7 @@ PORT=5050 node server.js
 - `GET /api/download/pdf/:id` → generate PDF
 - `GET /api/download/docx/:id` → generate DOCX
 
-## Quick manual test
+## Quick test
 
 1. Open the page.
 2. Fill fields and click ** SUBMIT FULL ANNUAL REPORT**.
@@ -55,8 +55,3 @@ PORT=5050 node server.js
 ```bash
 curl -X POST http://localhost:5050/api/submit -H 'Content-Type: application/json' -d '{"academicYear":"2025-26","section1":{"institutionName":"SNDT"}}'
 ```
-
-## Notes
-
-- If you use a different MongoDB URI, set `MONGO_URI` in environment variables.
-- If port 5050 is busy, use another port: `PORT=5001 node server.js`.
